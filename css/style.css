@@ -11,7 +11,7 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .clear-fix {
@@ -26,9 +26,9 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  text-align: center;
+  color: #03a9f4;
   line-height: 48px;
-  display: inline;
 }
 
 h2 {
@@ -92,11 +92,20 @@ a {
   display: block;
 }
 
+.role {
+  text-align: center;
+  font-size: 2.5em;
+}
+
 .welcome-message {
   font-style: italic;
   font-size: 18px;
   color: #f3f3f3;
   line-height: 28px;
+}
+
+#skills {
+  background-color: #03a9f4;
 }
 
 #skills-h3 {
@@ -143,7 +152,7 @@ a {
 
 .flex-column {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: nowrap;
   padding: 10px;
 }
