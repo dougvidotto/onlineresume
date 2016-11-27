@@ -1,6 +1,7 @@
- var welcomeMessage = "Hello guys! I hope that with this website you will get to learn about me a little bit and maybe we can work together as a team";
+ var welcomeMessage = "Hello guys! With this website I hope I can show you a little bit of what I already did and what I can do as a web developer." +
+ 					  " Also, I am eager to join a nice team with passion about technology and that enjoys to use them to solve people\'s everyday problems";
  
- var skills = ["HTML", "CSS", "Java", "SQL", "Agile", "JSP", "Struts"];
+ var skills = ["HTML", "CSS", "Java", "TDD", "SQL", "Agile"];
 
  var bio = {
  	"name": "Douglas Carvalho",
@@ -25,7 +26,7 @@
  			"title": "System Analyst",
  			"date": "current",
  			"location": "São Paulo",
- 			"description": "Java, SQL, HTML and CSS programmer and tester."
+ 			"description": "Java programmer and tester"
  		},
  		{
  			"employer": "Itaú Unibanco",
@@ -47,21 +48,21 @@ var projects = {
 	"allProjects": 
 	[
 		{
-			"title":"animals",
+			"title":"Animals",
 			"date": "jul - 2016",
 			"description": "A web page that simulates a card of a game similar to Hearthstone or Magic the gathering"
 		},
 
 		{
-			"title": "portfolio",
+			"title": "Portfolio",
 			"date": "oct - 2016",
 			"description": "A web page describing a little bit of yourself and one that you can show some web techniques"
 		}
 
 	],
-	"display": function () {
+	display: function () {
 		for(var i = 0; i < projects.allProjects.length; i++) {
-			$("#projects").append(HTMLprojectStart);
+			$("#project-entries").append(HTMLprojectStart);
 			var projectTitle = HTMLprojectTitle.replace("%data%", projects.allProjects[i].title);
 			$(".project-entry:last").append(projectTitle);
 			var projectDate = HTMLprojectDates.replace("%data%", projects.allProjects[i].date);
@@ -77,18 +78,21 @@ var projects = {
  	[
  	   {
  	   	"name": "Universidade Federal de São Carlos",
- 	   	"location": "São Carlos, BR",
- 	   	"course": ["Computer Science"]
+ 	   	"location": "São Carlos, SP",
+ 	   	"course": ["Computer Science"],
+ 	   	"date": "2007(Mar) - 2011(Aug)"
  	   },
  	   {
  	   	"name": "Alura",
  	   	"location": "São Paulo",
- 	   	"course": ["TDD", "Object Orientation", "Hibernate"]
+ 	   	"course": ["TDD", "Object Orientation", "Hibernate"],
+ 	   	"date": "2010(Sept) - 2011(Jul)"
  	   },
  	   {
  	   	"name": "Udacity",
  	   	"location": "São Paulo",
- 	   	"couse": ["Front-End Developer Nanodegree"]
+ 	   	"course": ["Front-End Developer Nanodegree"],
+ 	   	"date":"2016(Apr) - Current"
  	   }
  	]
  };
@@ -118,14 +122,12 @@ var projects = {
 	 	$("#skills").append(skill);
 	 	var skill = HTMLskills.replace('%data%', bio.skills[5]);
 	 	$("#skills").append(skill);
-	 	var skill = HTMLskills.replace('%data%', bio.skills[6]);
-	 	$("#skills").append(skill);
 	 }
  }
 
  function displayWork() {
 	 for(job in work.jobs) {
-	 	$("#workExperience").append(HTMLworkStart);
+	 	$("#work-entries").append(HTMLworkStart);
 	 	var workEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 	 	var workTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 
@@ -140,6 +142,22 @@ var projects = {
 		$(".work-entry:last").append(workLocation);
 		$(".work-entry:last").append(workDescription);
 	 }	
+ }
+
+ function displayEducation() {
+ 	for(school in education.schools) {
+ 		$("#education-entries").append(HTMLschoolStart);
+ 		var schoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+ 		var schoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].course);
+ 		
+ 		$(".education-entry:last").append(schoolName + schoolDegree);
+
+ 		var schoolDate = HTMLschoolDates.replace("%data%", education.schools[school].date);
+ 		var schoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+
+		$(".education-entry:last").append(schoolDate); 		
+		$(".education-entry:last").append(schoolLocation);
+ 	}
  }
 
  function displayInternationalizeButton() {
@@ -158,9 +176,33 @@ var projects = {
  displayInternationalizeButton();
  displayBio();
  displayWork();
+ displayEducation();
  projects.display();
  $("#mapDiv").append(googleMap);
 
+ $("#work-experience-button").click(function() {
+ 	if(!$("#work-entries").hasClass("entries-show")) {
+ 		$("#work-entries").addClass("entries-show");
+ 	} else {
+ 		$("#work-entries").removeClass("entries-show");
+ 	}
+ });
+
+ $("#projects-button").click(function() {
+ 	if(!$("#project-entries").hasClass("entries-show")) {
+ 		$("#project-entries").addClass("entries-show");
+ 	} else {
+ 		$("#project-entries").removeClass("entries-show");
+ 	}
+ });
+
+$("#education-button").click(function() {
+ 	if(!$("#education-entries").hasClass("entries-show")) {
+ 		$("#education-entries").addClass("entries-show");
+ 	} else {
+ 		$("#education-entries").removeClass("entries-show");
+ 	}
+ });
 
  /*$("#header").prepend(profilePicture);
  $("#header").append(welcomeMessage);

@@ -7,6 +7,14 @@
   <link href="css/style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  	  @import url(http://weloveiconfonts.com/api/?family=zocial);
+
+		/* zocial */
+		[class*="zocial-"]:before {
+		  font-family: 'zocial', sans-serif;
+		}
+  </style>
 </head>
 <body>
   <main id="main">
@@ -16,15 +24,21 @@
     <div style="clear: both;"></div>
 
     <div id="workExperience" class="gray">
-      <h2>Work Experience</h2>
+      <h2 id="work-experience-title">Work Experience</h2>
+      <button id="work-experience-button" class="hide-and-show-menu">Work Experience</button>
+      <div id="work-entries" class="entries"></div>
     </div>
     
-    <div id="projects">
-      <h2>Projects</h2>
+    <div id="projects" class="white">
+      <h2 id="projects-title">Projects</h2>
+      <button id="projects-button" class="hide-and-show-menu">Projects</button>
+      <div id="project-entries" class="entries"></div>
     </div>
     
     <div id="education" class="gray">
-      <h2>Education</h2>
+      <h2 id="education-title">Education</h2>
+      <button id="education-button" class="hide-and-show-menu">Education</button>
+      <div id="education-entries" class="entries"></div>
     </div>
     
     <div id="mapDiv">
@@ -34,6 +48,11 @@
     <div id="lets-connect" class="dark-gray">
       <h2 class="orange center-text">Let's Connect</h2>
         <ul id="footerContacts" class="flex-box">
+        	<li>
+        		<a class="zocial-twitter" href="https://twitter.com/douglasVidotto" target="_blank">  Twitter</a></li>
+        	<li>
+        		<a class="zocial-linkedin" href="https://br.linkedin.com/in/douglas-vidotto-32474a19" target="_blank">  Linkedin</a>
+        	</li>
       </ul>
     </div>
   </main>

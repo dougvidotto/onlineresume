@@ -1,3 +1,5 @@
+@import url(http://weloveiconfonts.com/api/?family=zocial);
+
 body,
 div,
 ul,
@@ -14,6 +16,11 @@ h6 {
   font-family: 'Open Sans', sans-serif;
 }
 
+body {
+  /*background-color: #716a6a;*/
+  background-color: #fff;
+}
+
 .clear-fix {
   overflow: auto;
 }
@@ -27,7 +34,7 @@ h6 {
 h1 {
   font-size: 40px;
   text-align: center;
-  color: #03a9f4;
+  color: #fff;
   line-height: 48px;
 }
 
@@ -95,17 +102,18 @@ a {
 .role {
   text-align: center;
   font-size: 2.5em;
+  color: #e67522;
 }
 
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #f3f3f3;
+  color: #fff;
   line-height: 28px;
 }
 
 #skills {
-  background-color: #03a9f4;
+  background-color: #e67522;
 }
 
 #skills-h3 {
@@ -132,13 +140,31 @@ a {
   clear:both;
 }
 
+.white {
+  background-color: #fff;
+}
+
 .dark-gray {
   background-color: #4a4a4a;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  position: relative;
+}
+
+/*Thanks CSS-Tricks for the tip*/
+#header::after {
+  content: "";
+  background-image: url('../images/freelancer_presentation-medium.jpg');
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+
 }
 
 .flex-box {
@@ -170,6 +196,7 @@ ul {
   padding: 10px;
   width: 200px;
   display: none;
+  border-radius: 100px;
 }
 
 img {
@@ -181,7 +208,12 @@ span {
 }
 
 #lets-connect {
+  display: block;
   text-align: center;
+}
+
+.hide-and-show-menu {
+  display: none;
 }
 
 /* Media queries to handle various device widths */
@@ -208,6 +240,50 @@ span {
   .welcome-message {
     display: none;
   }
+
+  .entries {
+    position: absolute;
+    top: 100%;
+    transform: translateY(-1em);
+    visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.3s ease, visibility 0.3s ease , z-index 0.3s ease ;
+  }
+
+  #workExperience {
+    background-color: #fff;
+  }
+
+  #work-experience-title, #projects-title, #education-title {
+    display: none;
+  }
+
+  .hide-and-show-menu {
+    display: block;
+    width: 65%;
+    border-radius: 20px;
+    margin-top: 20px;
+    background-color: #e67522;
+    font-size: 20px;
+    font-family: inherit;
+    border: none;
+    text-align: center;
+  }
+
+  .hide-and-show-menu::after {
+    position: relative;
+    top: 3pt;
+    display: inline-block;
+    width: 0.3em;
+    height: 0.3em;
+    border-right: 0.2em solid black;
+    border-top: 0.2em solid black;
+    transform: rotate(45deg);
+    margin-bottom: 0.25em;
+    margin-left: 0.8em;
+    content:"";
+  }
 }
 
 #map {
@@ -223,8 +299,16 @@ span {
 }
 
 @media only screen and (min-width: 750px) {
-  #skills-h3,
-  .biopic {
+  #skills-h3,.biopic {
     display: block;
   }
+}
+
+.entries-show {
+    position: relative;
+    transform: translateY(0%);
+    z-index: 1;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s ease, visibility 0.3s ease , z-index 0.3s ease;
 }
