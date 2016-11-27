@@ -9,297 +9,300 @@ h3,
 h4,
 h5,
 h6 {
-  padding:0;
-  margin:0;
-  font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
-  /*background-color: #716a6a;*/
-  background-color: #fff;
+    background-color: #000;
 }
 
 .clear-fix {
-  overflow: auto;
+    overflow: auto;
 }
 
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 5%;
+    padding: 0 5%;
 }
 
 h1 {
-  font-size: 40px;
-  text-align: center;
-  color: #fff;
-  line-height: 48px;
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+    line-height: 48px;
 }
 
 h2 {
-  font-weight: bold;
-  font-size: 24px;
-  color: #999;
-  line-height: 29px;
-  padding: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #999;
+    line-height: 29px;
+    padding: 10px;
 }
 
 h3 {
-  font-style: italic;
-  font-size: 20px;
-  color: #000;
-  line-height: 22px;
+    font-style: italic;
+    font-size: 20px;
+    color: #000;
+    line-height: 22px;
 }
 
 h4 {
-  font-weight: bold;
-  font-size: 14px;
-  color: #4a4a4a;
-  line-height: 17px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #4a4a4a;
+    line-height: 17px;
 }
 
 h2,
 h3,
 h4,
 h5 {
-  padding:10px 5%;
-
+    padding: 10px 5%;
 }
 
-
 .date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: left;
+    font-style: italic;
+    font-size: 14px;
+    color: #999;
+    line-height: 16px;
+    float: left;
 }
 
 .location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: right;
-
+    font-style: italic;
+    font-size: 14px;
+    color: #999;
+    line-height: 16px;
+    float: right;
 }
 
 p {
-  font-size: 14px;
-  color: #333;
-  line-height: 21px;
+    font-size: 14px;
+    color: #333;
+    line-height: 21px;
 }
 
 a {
-  color: #1199c3;
-  text-decoration: none;
-  margin-top: 10px;
-  display: block;
+    color: #1199c3;
+    text-decoration: none;
+    margin-top: 25px;
+    display: block;
 }
 
 .role {
-  text-align: center;
-  font-size: 2.5em;
-  color: #e67522;
+    text-align: center;
+    font-size: 2.5em;
+    color: #e67522;
 }
 
 .welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #fff;
-  line-height: 28px;
+    font-style: italic;
+    font-size: 18px;
+    color: #fff;
+    line-height: 28px;
 }
 
 #skills {
-  background-color: #e67522;
+    background-color: #e67522;
 }
 
 #skills-h3 {
-  color: #f5ae23;
-  display: none;
+    color: #f5ae23;
+    display: none;
 }
 
 .orange {
-  background-color: #f5ae23;
+    background-color: #f5ae23;
 }
 
 .orange-text {
-  color: #f5ae23;
+    color: #f5ae23;
 }
 
 .white-text {
-  font-weight: bold;
-  color: #fff;
+    font-weight: bold;
+    color: #fff;
 }
 
 .gray {
-  background-color: #f3f3f3;
-  padding-bottom: 10px;
-  clear:both;
+    background-color: #f3f3f3;
+    padding-bottom: 10px;
+    clear: both;
 }
 
 .white {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 .dark-gray {
-  background-color: #4a4a4a;
+    background-color: #4a4a4a;
 }
 
 /* TODO: Replace with image later */
 #header {
-  position: relative;
+    position: relative;
 }
 
 /*Thanks CSS-Tricks for the tip*/
 #header::after {
-  content: "";
-  background-image: url('../images/freelancer_presentation-medium.jpg');
-  opacity: 0.8;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-
+    content: "";
+    background-image: url('../images/freelancer_presentation-medium.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
 
 .flex-box {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 10px;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
 }
 
 .flex-column {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 10px;
 }
 
 .center-content {
-  padding: 2.5% 5%;
+    padding: 2.5% 5%;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 .biopic {
-  float: left;
-  padding: 10px;
-  width: 200px;
-  display: none;
-  border-radius: 100px;
+    float: left;
+    padding: 10px;
+    width: 200px;
+    display: none;
+    border-radius: 100px;
 }
 
 img {
-  padding: 10px;
+    padding: 10px;
 }
 
 span {
-  padding: 5px;
+    padding: 5px;
 }
 
 #lets-connect {
-  display: block;
-  text-align: center;
+    display: block;
+    text-align: center;
 }
 
 .hide-and-show-menu {
-  display: none;
+    display: none;
 }
 
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
-  #lets-connect {
-    margin-top: 5%;
-  }
+    #lets-connect {
+        margin-top: 5%;
+    };
 }
 
 @media only screen and (max-width:900px) {
-  .biopic {
-    width: 175px;
-  }
+    .biopic {
+        width: 175px;
+    };
 }
 
 @media only screen and (max-width: 750px) {
-  #lets-connect {
-    margin-top: 10%;
-  }
-  .biopic {
-    width: 150px;
-  }
-  .welcome-message {
-    display: none;
-  }
+    #lets-connect {
+        margin-top: 10%;
+    }
 
-  .entries {
-    position: absolute;
-    top: 100%;
-    transform: translateY(-1em);
-    visibility: hidden;
-    z-index: -1;
-    opacity: 0;
-    transition: all 0.3s ease, visibility 0.3s ease , z-index 0.3s ease ;
-  }
+    .biopic {
+        width: 150px;
+    }
 
-  #workExperience {
-    background-color: #fff;
-  }
+    .welcome-message {
+        display: none;
+    }
 
-  #work-experience-title, #projects-title, #education-title {
-    display: none;
-  }
+    #header::after {
+        background-image: url('../images/freelancer_presentation-small.jpg');
+    }
 
-  .hide-and-show-menu {
-    display: block;
-    width: 65%;
-    border-radius: 20px;
-    margin-top: 20px;
-    background-color: #e67522;
-    font-size: 20px;
-    font-family: inherit;
-    border: none;
-    text-align: center;
-  }
+    .entries {
+        position: absolute;
+        top: 100%;
+        transform: translateY(-1em);
+        visibility: hidden;
+        z-index: -1;
+        opacity: 0;
+        transition: all 0.3s ease, visibility 0.3s ease , z-index 0.3s ease;
+    }
 
-  .hide-and-show-menu::after {
-    position: relative;
-    top: 3pt;
-    display: inline-block;
-    width: 0.3em;
-    height: 0.3em;
-    border-right: 0.2em solid black;
-    border-top: 0.2em solid black;
-    transform: rotate(45deg);
-    margin-bottom: 0.25em;
-    margin-left: 0.8em;
-    content:"";
-  }
+    #workExperience {
+        background-color: #fff;
+    }
+
+    #work-experience-title, #projects-title, #education-title {
+        display: none;
+    }
+
+    .hide-and-show-menu {
+        display: block;
+        width: 65%;
+        border-radius: 20px;
+        margin-top: 20px;
+        background-color: #e67522;
+        font-size: 20px;
+        font-family: inherit;
+        border: none;
+        text-align: center;
+    }
+
+    .hide-and-show-menu::after {
+        position: relative;
+        top: 3pt;
+        display: inline-block;
+        width: 0.3em;
+        height: 0.3em;
+        border-right: 0.2em solid black;
+        border-top: 0.2em solid black;
+        transform: rotate(45deg);
+        margin-bottom: 0.25em;
+        margin-left: 0.8em;
+        content: "";
+    };
 }
 
 #map {
-  display: block;
-  height: 100%;
-  margin: 0 5%;
+    display: block;
+    height: 100%;
+    margin: 0 5%;
 }
 
 #mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
+    height: 400px;
+    width: 100%;
+    padding-bottom: 5%;
 }
 
 @media only screen and (min-width: 750px) {
-  #skills-h3,.biopic {
-    display: block;
-  }
+    #skills-h3,.biopic {
+        display: block;
+    };
 }
 
 .entries-show {
