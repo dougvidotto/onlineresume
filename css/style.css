@@ -240,50 +240,6 @@ span {
 
     #header::after {
         background-image: url('../images/freelancer_presentation-small.jpg');
-    }
-
-    .entries {
-        position: absolute;
-        top: 100%;
-        transform: translateY(-1em);
-        visibility: hidden;
-        z-index: -1;
-        opacity: 0;
-        transition: all 0.3s ease, visibility 0.3s ease , z-index 0.3s ease;
-    }
-
-    #workExperience {
-        background-color: #fff;
-    }
-
-    #work-experience-title, #projects-title, #education-title {
-        display: none;
-    }
-
-    .hide-and-show-menu {
-        display: block;
-        width: 65%;
-        border-radius: 20px;
-        margin-top: 20px;
-        background-color: #e67522;
-        font-size: 20px;
-        font-family: inherit;
-        border: none;
-        text-align: center;
-    }
-
-    .hide-and-show-menu::after {
-        position: relative;
-        top: 3pt;
-        display: inline-block;
-        width: 0.3em;
-        height: 0.3em;
-        border-right: 0.2em solid black;
-        border-top: 0.2em solid black;
-        transform: rotate(45deg);
-        margin-bottom: 0.25em;
-        margin-left: 0.8em;
-        content: "";
     };
 }
 
