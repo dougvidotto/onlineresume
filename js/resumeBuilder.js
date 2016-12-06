@@ -13,34 +13,31 @@ var bio = {
     "skills": ["HTML", "CSS", "Java", "TDD", "SQL", "Agile"],
     "biopic": "images/profile.jpg",
     display: function() {
-        var formattedName = HTMLheaderName.replace("%data%", bio.name);
-        var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-        var profilePic = HTMLbioPic.replace("%data%", bio.biopic);
-        var welcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+        var data = '%data%';
+        var formattedName = HTMLheaderName.replace(data, bio.name);
+        var formattedRole = HTMLheaderRole.replace(data, bio.role);
+        var profilePic = HTMLbioPic.replace(data, bio.biopic);
+        var welcomeMessage = HTMLwelcomeMsg.replace(data, bio.welcomeMessage);
 
-        var contactMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-        var contactEmail = HTMLemail.replace("%data%", bio.contacts.email);
-        var contactTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-        var contactGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-        var contactLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-
-
+        var contactMobile = HTMLmobile.replace(data, bio.contacts.mobile);
+        var contactEmail = HTMLemail.replace(data, bio.contacts.email);
+        var contactTwitter = HTMLtwitter.replace(data, bio.contacts.twitter);
+        var contactGithub = HTMLgithub.replace(data, bio.contacts.github);
+        var contactLocation = HTMLlocation.replace(data, bio.contacts.location);
 
         $("#header").append(welcomeMessage);
-        $("#topContacts").prepend(contactMobile);
-        $("#topContacts").prepend(contactEmail);
-        $("#topContacts").prepend(contactTwitter);
-        $("#topContacts").prepend(contactGithub);
-        $("#topContacts").prepend(contactLocation);
+        $("#topContacts, #footerContacts").prepend(contactMobile);
+        $("#topContacts, #footerContacts").prepend(contactEmail);
+        $("#topContacts, #footerContacts").prepend(contactTwitter);
+        $("#topContacts, #footerContacts").prepend(contactGithub);
+        $("#topContacts, #footerContacts").prepend(contactLocation);
         $("#header").prepend(formattedRole);
         $("#header").prepend(formattedName);
         $("#header").prepend(profilePic);
 
-
-
         $("#header").append(HTMLskillsStart);
         for (var i = 0; i < bio.skills.length; i++) {
-            var skill = HTMLskills.replace('%data%', bio.skills[i]);
+            var skill = HTMLskills.replace(data, bio.skills[i]);
             $("#skills").append(skill);
         }
     }
@@ -67,16 +64,17 @@ var work = {
         "description": "Java programmer"
     }],
     display: function() {
+        var data = '%data%';
         for (var i = 0; i < work.jobs.length; i++) {
             $("#workExperience").append(HTMLworkStart);
-            var workEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
-            var workTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
+            var workEmployer = HTMLworkEmployer.replace(data, work.jobs[i].employer);
+            var workTitle = HTMLworkTitle.replace(data, work.jobs[i].title);
 
             $(".work-entry:last").append(workEmployer + workTitle);
 
-            var workDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
-            var workLocation = HTMLworkLocation.replace("%data%", work.jobs[i].description);
-            var workDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
+            var workDates = HTMLworkDates.replace(data, work.jobs[i].dates);
+            var workLocation = HTMLworkLocation.replace(data, work.jobs[i].location);
+            var workDescription = HTMLworkDescription.replace(data, work.jobs[i].description);
 
             $(".work-entry:last").append(workDates);
             $(".work-entry:last").append(workLocation);
@@ -102,17 +100,18 @@ var projects = {
 
     ],
     display: function() {
+        var data = '%data%';
         for (var i = 0; i < projects.projects.length; i++) {
             $("#projects").append(HTMLprojectStart);
-            var projectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
+            var projectTitle = HTMLprojectTitle.replace(data, projects.projects[i].title);
             $(".project-entry:last").append(projectTitle);
-            var projectDate = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
+            var projectDate = HTMLprojectDates.replace(data, projects.projects[i].dates);
             $(".project-entry:last").append(projectDate);
-            var projectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
+            var projectDescription = HTMLprojectDescription.replace(data, projects.projects[i].description);
             $(".project-entry:last").append(projectDescription);
 
             for (var j = 0; j < projects.projects[i].images.length; j++) {
-                var projectImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[j]);
+                var projectImage = HTMLprojectImage.replace(data, projects.projects[i].images[j]);
                 $(".project-entry:last").append(projectImage);
             }
         }
@@ -140,21 +139,24 @@ var education = {
         "url": "https://www.udacity.com"
     }],
     display: function() {
+        var data = '%data%';
+        var urlSharp = '#';
         /*Schools*/
         for (var i = 0; i < education.schools.length; i++) {
             $("#education").append(HTMLschoolStart);
-            var schoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
-            var schoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
-
+            var schoolName = HTMLschoolName.replace(data, education.schools[i].name);
+            schoolName = schoolName.replace(urlSharp, education.schools[i].url);
+            var schoolDegree = HTMLschoolDegree.replace(data, education.schools[i].degree);
+            
             $(".education-entry:last").append(schoolName + schoolDegree);
 
-            var schoolDate = HTMLschoolDates.replace("%data%", education.schools[i].dates);
-            var schoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
+            var schoolDate = HTMLschoolDates.replace(data, education.schools[i].dates);
+            var schoolLocation = HTMLschoolLocation.replace(data, education.schools[i].location);
             $(".education-entry:last").append(schoolDate);
             $(".education-entry:last").append(schoolLocation);
 
             for (var j = 0; j < education.schools[i].majors.length; j++) {
-                var schoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors[j]);
+                var schoolMajor = HTMLschoolMajor.replace(data, education.schools[i].majors[j]);
                 $(".education-entry:last").append(schoolMajor);
             }
         }
@@ -162,18 +164,18 @@ var education = {
         /*Online Courses*/
         $(".education-entry:last").append(HTMLonlineClasses);
         for (var k = 0; k < education.onlineCourses.length; k++) {
-            var courseTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[k].title);
-            var courseSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[k].school);
+            var courseTitle = HTMLonlineTitle.replace(data, education.onlineCourses[k].title);
+            courseTitle = courseTitle.replace(urlSharp, education.onlineCourses[k].url);
+            var courseSchool = HTMLonlineSchool.replace(data, education.onlineCourses[k].school);
             $(".education-entry:last").append(courseTitle + courseSchool);
 
-            var courseDates = HTMLonlineDates.replace("%data%", education.onlineCourses[k].dates);
+            var courseDates = HTMLonlineDates.replace(data, education.onlineCourses[k].dates);
             $(".education-entry:last").append(courseDates);
 
-            var courseURL = HTMLonlineURL.replace("%data%", education.onlineCourses[k].url);
+            var courseURL = HTMLonlineURL.replace(data, education.onlineCourses[k].url);
+            courseURL = courseURL.replace(urlSharp, education.onlineCourses[k].url);
             $(".education-entry:last").append(courseURL);
         }
-
-
     }
 };
 
